@@ -1,5 +1,5 @@
 {
-  "name": "EchobindSpotify",
+  "name": "echobind-spotify",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -24,9 +24,11 @@
     "@types/react-test-renderer": "^16.8.2",
     "babel-jest": "^24.1.0",
     "eslint": "^5.0.0",
+    "eslint-plugin-jest": "^22.16.0",
     "jest": "^24.1.0",
     "jest-junit": "^8.0.0",
     "metro-react-native-babel-preset": "^0.54.1",
+    "react-native-testing-library": "^1.11.1",
     "react-test-renderer": "16.8.6",
     "typescript": "^3.5.3"
   },
