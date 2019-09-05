@@ -6,6 +6,7 @@ import { useQuery as useApolloQuery } from '@apollo/react-hooks';
 import { QueryComponentOptions } from '@apollo/react-components';
 import { Loading } from './Loading';
 import { NetworkStatus } from 'apollo-client';
+import AsyncStorage from '@react-native-community/async-storage';
 
 interface Props {
   query: DocumentNode;
@@ -41,13 +42,14 @@ export function Query<TData = any, TVariables = OperationVariables>({
   if (result.error) {
     const { graphQLErrors } = result.error;
     const isUnauthenticated = graphQLErrors.find(
-      error => !!error.extensions && error.extensions.code === 'UNAUTHENTICATED'
+      error => error.message && error.message === 'Unauthorized'
     );
     if (isUnauthenticated) {
-      navigation.navigate('Auth');
+      AsyncStorage.multiRemove(['access-token', 'token-expires']).then(() =>
+        navigation.navigate('Auth')
+      );
       return null;
     }
-
     return errorFallback || <Loading error />;
   }
 
