@@ -1,0 +1,93 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/echobind-spotify
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+
+      - run: yarn
+
+      - save_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+          paths:
+            - ~/.cache/yarn
+
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+          paths:
+            - node_modules
+
+      - persist_to_workspace:
+          root: ~/echobind-spotify
+          paths:
+            - node_modules
+
+  test:
+    working_directory: ~/echobind-spotify
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout:
+          path: ~/echobind-spotify
+
+      - attach_workspace:
+          at: ~/echobind-spotify
+
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+
+      - run:
+          name: jest tests
+          command: |
+            mkdir -p test-results/jest
+            yarn test:ci
+          environment:
+            JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
+
+      - store_test_results:
+          path: test-results
+
+      - store_artifacts:
+          path: test-results
+
+  lint:
+    working_directory: ~/echobind-spotify
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout:
+          path: ~/echobind-spotify
+
+      - attach_workspace:
+          at: ~/echobind-spotify
+
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+
+      - run:
+          name: 'eslint'
+          command: 'yarn lint'
+
+      - run:
+          name: 'tsc'
+          command: 'yarn tsc'
+
+workflows:
+  version: 2
+  node-android-ios:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - lint:
+          requires:
+            - build
