@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    // Target latest version of ECMAScript.
+    "target": "esnext",
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Process & infer types from .js files.
+    "allowJs": false,
+    // Don't emit; allow Babel to transform files.
+    "noEmit": true,
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    // Disallow features that require cross-file information for emit.
+    "isolatedModules": true,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    // Allow default imports from modules with no default export. This does not affect code emit, just typechecking.
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-native",
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "lib": ["es7"]
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*"]
+}
