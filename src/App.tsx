@@ -1,14 +1,14 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
 import { RootNav } from './navigation';
-import { Colors } from './helpers/constants';
+import { Colors, DEEP_LINKING_SCHEME } from './helpers/constants';
 
 export const App: React.FC = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.appContainer}>
-        <RootNav />
+        <RootNav uriPrefix={DEEP_LINKING_SCHEME} />
       </SafeAreaView>
     </>
   );
