@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, FlatList, Text, View } from 'react-native';
-import { AlbumListQuery_me_albums } from '../../spotify-graphql-types';
 import {
   NavigationScreenProp,
   NavigationRoute,
@@ -15,7 +14,7 @@ type Props = {
     NavigationParams
   >;
   name: string;
-  albums: AlbumListQuery_me_albums[];
+  albums: any[];
   onRefresh: () => void;
   refreshing: boolean;
 };
@@ -27,7 +26,7 @@ export const AlbumListView: React.FC<Props> = ({
   onRefresh,
   refreshing,
 }) => {
-  const keyExtractor = (item: AlbumListQuery_me_albums) =>
+  const keyExtractor = (item: any) =>
     (item && item.album && item.album.id) || `${Math.random() * -1}`;
 
   const goToAlbumNotes = (id: string | null) => () =>

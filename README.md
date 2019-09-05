@@ -13,8 +13,9 @@
 - Testing
 - CI
 - Coverage
-- GraphQL
-- Apollo Client
+- Hooks
+  ~~- GraphQL~~
+  ~~- Apollo Client~~
 
 ### Setup
 
