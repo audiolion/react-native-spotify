@@ -6,7 +6,9 @@ import { AlbumListView } from '../components/AlbumListView';
 export const AlbumListScreen: React.FC<NavigationScreenProps> = props => {
   const [refreshing, setRefreshing] = React.useState(false);
 
-  const handleRefresh = () => {};
+  const handleRefresh = () => {
+    setRefreshing(true);
+  };
 
   let data = { me: { display_name: '' }, items: [] };
   if (!data || !data.items) {

@@ -60,6 +60,7 @@ export const Loading: React.FC<Props> = ({
       <ActivityIndicator
         animating={animating}
         testID={
+          // @ts-ignore
           process.env.NODE_ENV === 'test'
             ? 'components-loading-indicator'
             : undefined
