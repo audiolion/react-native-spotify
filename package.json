@@ -11,6 +11,9 @@
     "lint": "eslint src/**/*.{ts,tsx}"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.1",
+    "date-fns": "^2.0.1",
+    "query-string": "^6.8.3",
     "react": "16.8.6",
     "react-native": "0.60.3",
     "react-native-gesture-handler": "^1.4.1",
@@ -36,6 +39,7 @@
     "metro-react-native-babel-preset": "^0.54.1",
     "react-native-testing-library": "^1.11.1",
     "react-test-renderer": "16.8.6",
+    "reactotron-react-native": "^3.6.5",
     "typescript": "^3.5.3"
   },
   "jest": {
@@ -52,9 +56,10 @@
       "src/**/*.{js,jsx,ts,tsx}"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|react-navigation|@react-navigation/.*))"
+      "node_modules/(?!((jest-)?react-native|react-navigation|@react-navigation/.*|@react-native-community/.*))"
     ],
     "setupFiles": [
+      "./jestSetup.js",
       "./node_modules/react-native-gesture-handler/jestSetup.js"
     ]
   },
