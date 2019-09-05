@@ -1,9 +1,9 @@
 import { createStackNavigator } from 'react-navigation-stack';
-import { createStubScreen } from './createStubScreen';
+import { SpotifyLoginScreen } from '../screens/SpotifyLoginScreen';
 
 export const AuthNav = createStackNavigator(
   {
-    Login: createStubScreen('Spotify Login'),
+    Login: SpotifyLoginScreen,
   },
   {
     initialRouteName: 'Login',

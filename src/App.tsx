@@ -1,6 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
 import { RootNav } from './navigation';
+import { Colors } from './helpers/constants';
 
 export const App: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ export const App: React.FC = () => {
 
 const styles = StyleSheet.create({
   appContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: Colors.spotifyWhite,
     flex: 1,
   },
 });
