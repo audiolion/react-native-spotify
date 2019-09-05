@@ -3,6 +3,7 @@
 > React Native app demo for Echobind
 
 [![CircleCI](https://circleci.com/gh/audiolion/echobind-spotify.svg?style=svg)](https://circleci.com/gh/audiolion/echobind-spotify)
+[![codecov](https://codecov.io/gh/audiolion/echobind-spotify/branch/master/graph/badge.svg?token=bWDPDDZnHG)](https://codecov.io/gh/audiolion/echobind-spotify)
 
 ### Highlights
 
