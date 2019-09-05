@@ -2,6 +2,7 @@ import React from 'react';
 import queryString from 'query-string';
 import { material } from 'react-native-typography';
 import { NavigationScreenProps } from 'react-navigation';
+import compareAsc from 'date-fns/compareAsc';
 import {
   View,
   Text,
@@ -11,6 +12,7 @@ import {
   Linking,
 } from 'react-native';
 import { Colors, DEEP_LINKING_SCHEME } from '../helpers/constants';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const scopes = ['user-library-read', 'user-read-private'];
 
@@ -48,6 +50,24 @@ export const SpotifyLoginScreen: React.FC<NavigationScreenProps> = props => {
     return () => {
       Linking.removeEventListener('url', handleSpotifyCallback);
     };
+  }, []);
+
+  React.useEffect(() => {
+    AsyncStorage.multiGet(['access-token', 'token-expires'])
+      .then(vals => {
+        if (vals.length === 2) {
+          const [, accessToken] = vals[0];
+          const [, expiresIn] = vals[1];
+          if (
+            accessToken &&
+            expiresIn &&
+            compareAsc(new Date(expiresIn), new Date())
+          ) {
+            props.navigation.navigate('App');
+          }
+        }
+      })
+      .catch(console.error);
   }, []);
 
   return (
