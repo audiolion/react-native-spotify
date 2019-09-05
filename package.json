@@ -11,6 +11,7 @@
     "lint": "eslint src/**/*.{ts,tsx}"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.1",
     "query-string": "^6.8.3",
     "react": "16.8.6",
     "react-native": "0.60.3",
