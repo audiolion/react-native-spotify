@@ -8,7 +8,7 @@
     "test": "jest",
     "test:ci": "jest --ci --reporters=default --reporters=jest-junit --collectCoverage",
     "tsc": "tsc -p ./tsconfig.json",
-    "lint": "eslint src/**/*"
+    "lint": "eslint src/**/*.{ts,tsx}"
   },
   "dependencies": {
     "react": "16.8.6",
