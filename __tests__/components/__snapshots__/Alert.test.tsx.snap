@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert matches snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderRadius": 4,
+        "marginHorizontal": 16,
+        "marginVertical": 10,
+        "paddingHorizontal": 16,
+        "paddingVertical": 10,
+      },
+      Object {
+        "backgroundColor": "#d64545",
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#fff",
+        },
+        undefined,
+      ]
+    }
+  >
+    Hello
+  </Text>
+</View>
+`;
