@@ -36,6 +36,7 @@ node_modules/
 npm-debug.log
 yarn-error.log
 coverage/
+junit.xml
 
 # BUCK
 buck-out/
