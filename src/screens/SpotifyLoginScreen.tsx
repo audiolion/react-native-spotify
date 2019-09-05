@@ -14,7 +14,12 @@ import {
 import { Colors, DEEP_LINKING_SCHEME } from '../helpers/constants';
 import AsyncStorage from '@react-native-community/async-storage';
 
-const scopes = ['user-library-read', 'user-read-private'];
+const scopes = [
+  'user-library-read',
+  'user-read-private',
+  'user-follow-read',
+  'user-read-email',
+];
 
 export const SpotifyLoginScreen: React.FC<NavigationScreenProps> = props => {
   const openSpotifyLogin = () => {
