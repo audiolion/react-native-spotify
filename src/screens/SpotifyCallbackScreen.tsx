@@ -10,12 +10,12 @@ export const SpotifyCallbackScreen: React.FC<NavigationScreenProps> = props => {
     const accessToken = props.navigation.getParam('access_token', '');
 
     const now = new Date();
-    const expiresIn = props.navigation.getParam('expires_in', 0);
+    const expiresIn = props.navigation.getParam('expires_in', '0');
     const tokenExpires = addSeconds(now, expiresIn);
 
     AsyncStorage.multiSet([
       ['access-token', accessToken],
-      ['token-expires', tokenExpires],
+      ['token-expires', tokenExpires.toISOString()],
     ]).then(() => props.navigation.navigate('App'));
   }, []);
 
