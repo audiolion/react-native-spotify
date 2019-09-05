@@ -20,6 +20,7 @@
     "sourceMap": true,
     "noImplicitReturns": true,
     "skipLibCheck": true,
+    "typeRoots": ["./src/typings", "node_modules/@types"],
     "lib": ["es7"]
   },
   "exclude": ["node_modules"],
