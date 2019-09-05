@@ -75,7 +75,7 @@ export const SpotifyLoginScreen: React.FC<NavigationScreenProps> = props => {
         }
       })
       .catch(console.error);
-  }, []);
+  }, [props.navigation]);
 
   return (
     <View style={styles.center}>
