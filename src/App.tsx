@@ -14,6 +14,7 @@ export const App: React.FC = () => {
 
 const styles = StyleSheet.create({
   appContainer: {
-    backgroundColor: 'pink',
+    backgroundColor: '#fff',
+    flex: 1,
   },
 });
