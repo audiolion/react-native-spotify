@@ -23,6 +23,7 @@
     "apollo-link-http": "^1.5.15",
     "date-fns": "^2.0.1",
     "graphql": "^14.5.4",
+    "jest-fetch-mock": "^2.1.2",
     "query-string": "^6.8.3",
     "react": "16.8.6",
     "react-native": "0.60.3",
