@@ -10,7 +10,7 @@ import { apiUrl } from '../helpers/constants';
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   if (graphQLErrors && Array.isArray(graphQLErrors)) {
-    console.error(
+    console.log(
       graphQLErrors
         .map(
           ({ message, locations, path }) =>
@@ -20,7 +20,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
     );
   }
   if (networkError) {
-    console.error(`[Network error]: ${networkError}`);
+    console.log(`[Network error]: ${networkError}`);
   }
 });
 
