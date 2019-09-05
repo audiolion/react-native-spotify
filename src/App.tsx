@@ -1,12 +1,13 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, StatusBar } from 'react-native';
+import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
+import { RootNav } from './navigation';
 
 export const App: React.FC = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.appContainer}>
-        <Text>Echobind Spotify</Text>
+        <RootNav />
       </SafeAreaView>
     </>
   );
@@ -14,6 +15,7 @@ export const App: React.FC = () => {
 
 const styles = StyleSheet.create({
   appContainer: {
-    backgroundColor: 'pink',
+    backgroundColor: '#fff',
+    flex: 1,
   },
 });
