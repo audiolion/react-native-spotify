@@ -55,7 +55,7 @@
       "src/**/*.{js,jsx,ts,tsx}"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|react-navigation|@react-navigation/.*))"
+      "node_modules/(?!((jest-)?react-native|react-navigation|@react-navigation/.*|@react-native-community/.*))"
     ],
     "setupFiles": [
       "./jestSetup.js",
