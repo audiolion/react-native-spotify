@@ -10,6 +10,17 @@
     ts-invariant "^0.4.4"
     tslib "^1.10.0"
 
+"@apollo/react-components@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@apollo/react-components/-/react-components-3.0.1.tgz#f6fdd9fdb9863c0e8094a33f2525e7770fcf14ee"
+  integrity sha512-IQwcwv+ItW/QHUeO2zQH+CJGnqepPwwShD9H6+v1ptLvixggodr7S4KalNKXgRUVJsoPBFiVgpTMoJe3h4+Eyg==
+  dependencies:
+    "@apollo/react-common" "^3.0.1"
+    "@apollo/react-hooks" "^3.0.1"
+    prop-types "^15.7.2"
+    ts-invariant "^0.4.4"
+    tslib "^1.10.0"
+
 "@apollo/react-hooks@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@apollo/react-hooks/-/react-hooks-3.0.1.tgz#83869beddcbb06cba05d50ccf05097191d245a9c"
