@@ -37,25 +37,27 @@ export const SpotifyLoginScreen: React.FC<NavigationScreenProps> = props => {
     ).catch(console.error);
   };
 
-  const handleSpotifyCallback = ({ url }: { url: string }) => {
-    const params = queryString.parse(url);
-    const access_token = params[`${DEEP_LINKING_SCHEME}callback/#access_token`];
-    props.navigation.navigate({
-      routeName: 'Callback',
-      params: {
-        access_token,
-        expires_in: params.expires_in,
-        token_type: params.token_type,
-      },
-    });
-  };
-
   React.useEffect(() => {
+    const handleSpotifyCallback = ({ url }: { url: string }) => {
+      const params = queryString.parse(url);
+      const access_token =
+        params[`${DEEP_LINKING_SCHEME}callback/#access_token`];
+
+      props.navigation.navigate({
+        routeName: 'Callback',
+        params: {
+          access_token,
+          expires_in: params.expires_in,
+          token_type: params.token_type,
+        },
+      });
+    };
+
     Linking.addEventListener('url', handleSpotifyCallback);
     return () => {
       Linking.removeEventListener('url', handleSpotifyCallback);
     };
-  }, []);
+  }, [props.navigation]);
 
   React.useEffect(() => {
     AsyncStorage.multiGet(['access-token', 'token-expires'])

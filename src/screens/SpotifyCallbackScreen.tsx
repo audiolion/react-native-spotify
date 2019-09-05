@@ -17,7 +17,7 @@ export const SpotifyCallbackScreen: React.FC<NavigationScreenProps> = props => {
       ['access-token', accessToken],
       ['token-expires', tokenExpires.toISOString()],
     ]).then(() => props.navigation.navigate('App'));
-  }, []);
+  }, [props.navigation]);
 
   return (
     <View style={styles.container}>
