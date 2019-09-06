@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, FlatList, View } from 'react-native';
+import { StyleSheet, FlatList, View, Text } from 'react-native';
 import {
   NavigationScreenProp,
   NavigationRoute,
   NavigationParams,
 } from 'react-navigation';
 import { AlbumListRow } from './AlbumListRow';
+import { material } from 'react-native-typography';
 
 type Props = {
   navigation: NavigationScreenProp<
@@ -26,8 +27,12 @@ export const AlbumListView: React.FC<Props> = ({
   const keyExtractor = (item: Echobind.SavedAlbum) =>
     (item && item.album && item.album.id) || `${Math.random() * -1}`;
 
-  const goToAlbumNotes = (id: string) => () =>
-    id.charAt(0) !== '-' && navigation.navigate('AlbumNotes');
+  const goToAlbumNotes = (id: string, uri: string, name: string) => () =>
+    navigation.navigate('AlbumNotes', {
+      id,
+      uri,
+      name,
+    });
 
   return (
     <View style={styles.container}>
@@ -36,8 +41,20 @@ export const AlbumListView: React.FC<Props> = ({
         onRefresh={onRefresh}
         refreshing={refreshing}
         keyExtractor={keyExtractor}
+        ListEmptyComponent={
+          <View style={styles.container}>
+            <Text style={material.body1}>No saved albums.</Text>
+          </View>
+        }
         renderItem={({ item }) => (
-          <AlbumListRow item={item} onPress={goToAlbumNotes(item.album.id)} />
+          <AlbumListRow
+            item={item}
+            onPress={goToAlbumNotes(
+              item.album.id,
+              item.album.images[0].url,
+              item.album.name
+            )}
+          />
         )}
       />
     </View>
