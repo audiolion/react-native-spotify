@@ -4,8 +4,10 @@ if (__DEV__) {
   );
 }
 
-import { AppRegistry } from 'react-native';
+import { AppRegistry, YellowBox } from 'react-native';
 import { App } from './src/App';
 import { name as appName } from './app.json';
+
+YellowBox.ignoreWarnings(['Async Storage has been extracted']);
 
 AppRegistry.registerComponent(appName, () => App);
