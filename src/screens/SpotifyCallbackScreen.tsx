@@ -2,7 +2,7 @@ import React from 'react';
 import addSeconds from 'date-fns/addSeconds';
 import { NavigationScreenProps } from 'react-navigation';
 import AsyncStorage from '@react-native-community/async-storage';
-import { View, ActivityIndicator, StyleSheet } from 'react-native';
+import { ActivityIndicator, StyleSheet, SafeAreaView } from 'react-native';
 import { Colors } from '../helpers/constants';
 import { TokenContext } from '../components/TokenContext';
 
@@ -25,9 +25,9 @@ export const SpotifyCallbackScreen: React.FC<NavigationScreenProps> = props => {
   }, [props.navigation, setToken]);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ActivityIndicator color={Colors.spotifyGreen} size="large" />
-    </View>
+    </SafeAreaView>
   );
 };
 
