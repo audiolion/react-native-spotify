@@ -89,7 +89,6 @@ export const AlbumListScreen: React.FC<NavigationScreenProps> = props => {
       </ImageBackground>
       <AlbumListView
         navigation={props.navigation}
-        name={'ryan'}
         albums={data.items}
         onRefresh={handleRefresh}
         refreshing={refreshing}
