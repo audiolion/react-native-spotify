@@ -1,11 +1,17 @@
 import React from 'react';
-import { NavigationScreenProps, ScrollView } from 'react-navigation';
-import { StyleSheet, View, SafeAreaView, TextInput, Text } from 'react-native';
-import { AlbumHeader } from '../components/AlbumHeader';
-import { Colors } from '../helpers/constants';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useFetch } from '@ryanar/hooks';
 import { material } from 'react-native-typography';
+import { NavigationScreenProps, ScrollView } from 'react-navigation';
+import {
+  StyleSheet,
+  View,
+  SafeAreaView,
+  TextInput,
+  Text,
+  TouchableOpacity,
+} from 'react-native';
+import { AlbumHeader } from '../components/AlbumHeader';
+import { Colors } from '../helpers/constants';
 
 export const AlbumNotesScreen: React.FC<NavigationScreenProps> = props => {
   const [notes, setNotes] = React.useState<string>('');
