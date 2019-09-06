@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlbumHeader matches snapshot 1`] = `
+<View
+  accessibilityIgnoresInvertColors={true}
+  style={
+    Object {
+      "height": 333,
+      "shadowColor": "#32325d",
+      "shadowOffset": Object {
+        "height": 6,
+        "width": 0,
+      },
+      "shadowOpacity": 0.13,
+      "shadowRadius": 12,
+      "width": 750,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://example.com",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "height": 333,
+          "width": 750,
+        },
+        Object {
+          "opacity": 0.7,
+        },
+      ]
+    }
+  />
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "height": 333,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "opacity": 1,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "rgba(255,255,255,1)",
+              "fontFamily": "System",
+              "fontSize": 24,
+              "fontWeight": "400",
+              "letterSpacing": 0.351562,
+              "lineHeight": 32,
+            },
+            Object {
+              "backgroundColor": "rgba(0,0,0,0.7)",
+              "borderRadius": 20,
+              "fontSize": 30,
+              "fontWeight": "bold",
+              "paddingHorizontal": 20,
+              "paddingVertical": 10,
+            },
+          ]
+        }
+      >
+        foo
+      </Text>
+    </View>
+  </RCTSafeAreaView>
+</View>
+`;

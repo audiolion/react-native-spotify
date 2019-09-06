@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, act } from 'react-native-testing-library';
-import { Loading } from '../../src/components/Loading';
+import { Loading } from '../../components/Loading';
 
 jest.useFakeTimers();
 

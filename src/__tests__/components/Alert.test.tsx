@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-native-testing-library';
-import { Alert } from '../../src/components/Alert';
+import { Alert } from '../../components/Alert';
 
 describe('Alert', () => {
   it('matches snapshot', () => {
