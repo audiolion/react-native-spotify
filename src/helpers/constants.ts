@@ -5,6 +5,7 @@ export const Colors = {
   red: '#d64545',
   yellow: '#ffc107',
   blue: '#3F54A6',
+  tabBarShadowColor: '#32325d',
 };
 
 export const DEEP_LINKING_SCHEME = 'echobindspotify://';

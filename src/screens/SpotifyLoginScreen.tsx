@@ -4,7 +4,7 @@ import { material } from 'react-native-typography';
 import { NavigationScreenProps } from 'react-navigation';
 import compareAsc from 'date-fns/compareAsc';
 import {
-  View,
+  SafeAreaView,
   Text,
   StyleSheet,
   TouchableOpacity,
@@ -82,7 +82,7 @@ export const SpotifyLoginScreen: React.FC<NavigationScreenProps> = props => {
   }, [props.navigation, setToken]);
 
   return (
-    <View style={styles.center}>
+    <SafeAreaView style={styles.center}>
       <Image
         style={styles.logo}
         source={require('../assets/spotify-icon-green.png')}
@@ -91,7 +91,7 @@ export const SpotifyLoginScreen: React.FC<NavigationScreenProps> = props => {
       <TouchableOpacity onPress={openSpotifyLogin} style={styles.loginButton}>
         <Text style={styles.buttonText}>Login with Spotify</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
