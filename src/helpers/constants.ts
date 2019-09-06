@@ -9,4 +9,4 @@ export const Colors = {
 
 export const DEEP_LINKING_SCHEME = 'echobindspotify://';
 
-export const apiUrl = 'https://api.spotify.com/v1/';
+export const API_URL = 'https://api.spotify.com/v1';
