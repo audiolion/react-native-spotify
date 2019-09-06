@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Image,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Entypo';
 import { material } from 'react-native-typography';
 import { Colors } from '../helpers/constants';
 
@@ -22,9 +23,12 @@ export const AlbumListRow: React.FC<Props> = ({ item, onPress }) => {
           source={{ uri: item.album.images[0].url }}
           style={styles.image}
         />
-        <Text style={material.title} numberOfLines={1} ellipsizeMode="tail">
-          {item.album.name}
-        </Text>
+        <View style={styles.flexStart}>
+          <Text style={material.title} numberOfLines={1} ellipsizeMode="tail">
+            {item.album.name}
+          </Text>
+        </View>
+        <Icon name="chevron-thin-right" color={Colors.spotifyGreen} size={20} />
       </View>
     </TouchableHighlight>
   );
@@ -46,5 +50,10 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     marginRight: 10,
+  },
+  flexStart: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
   },
 });
