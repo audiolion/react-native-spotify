@@ -11,12 +11,13 @@ import {
 import { material } from 'react-native-typography';
 
 type Props = {
+  title: string;
   uri: string;
 };
 
 const oneQuarterScreenHeight = Math.floor(Dimensions.get('screen').height / 4);
 
-export const AlbumHeader: React.FC<Props> = ({ uri }) => {
+export const AlbumHeader: React.FC<Props> = ({ title, uri }) => {
   const source = { uri };
   return (
     <ImageBackground
@@ -26,9 +27,7 @@ export const AlbumHeader: React.FC<Props> = ({ uri }) => {
     >
       <SafeAreaView style={styles.headerContainer}>
         <View style={styles.center}>
-          <Text style={[material.headlineWhite, styles.headline]}>
-            Saved Albums
-          </Text>
+          <Text style={[material.headlineWhite, styles.headline]}>{title}</Text>
         </View>
       </SafeAreaView>
     </ImageBackground>

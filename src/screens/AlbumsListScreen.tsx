@@ -57,7 +57,7 @@ export const AlbumListScreen: React.FC<NavigationScreenProps> = props => {
 
   return (
     <View style={styles.container}>
-      <AlbumHeader uri={image.url} />
+      <AlbumHeader title="Saved Albums" uri={image.url} />
       <AlbumListView
         navigation={props.navigation}
         albums={data.items}
