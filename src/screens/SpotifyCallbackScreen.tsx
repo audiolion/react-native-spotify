@@ -9,8 +9,6 @@ import { TokenContext } from '../components/TokenContext';
 export const SpotifyCallbackScreen: React.FC<NavigationScreenProps> = props => {
   const [, setToken] = React.useContext(TokenContext);
 
-  console.tron.log({ setToken });
-
   React.useEffect(() => {
     const accessToken = props.navigation.getParam('access_token', '');
 
