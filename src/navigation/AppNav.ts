@@ -1,14 +1,11 @@
 import { createStackNavigator } from 'react-navigation-stack';
-import { createStubScreen } from './createStubScreen';
 import { AlbumListScreen } from '../screens/AlbumsListScreen';
+import { AlbumNotesScreen } from '../screens/AlbumNotesScreen';
 
 export const AppNav = createStackNavigator(
   {
     AlbumList: AlbumListScreen,
-    AlbumNotes: {
-      screen: createStubScreen('Album Notes'),
-      path: 'album-notes/:id',
-    },
+    AlbumNotes: AlbumNotesScreen,
   },
   {
     initialRouteName: 'AlbumList',
