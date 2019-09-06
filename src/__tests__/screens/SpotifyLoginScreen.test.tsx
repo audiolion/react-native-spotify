@@ -14,7 +14,7 @@ test('Checks for existing unexpired access token and pushes to App route', async
     navigate: jest.fn(),
   };
 
-  const { update } = render(<SpotifyLoginScreen navigation={navigateMock} />);
+  render(<SpotifyLoginScreen navigation={navigateMock as any} />);
 
   await new Promise(res => setTimeout(() => res(), 50));
 

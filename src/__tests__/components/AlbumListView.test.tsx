@@ -13,7 +13,7 @@ describe('AlbumListView', () => {
 
     const { getByText } = render(
       <AlbumListView
-        navigation={navigation}
+        navigation={navigation as any}
         albums={albums}
         onRefresh={jest.fn()}
         refreshing={false}
