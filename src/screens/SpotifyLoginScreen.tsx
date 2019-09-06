@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import { Colors, DEEP_LINKING_SCHEME } from '../helpers/constants';
 import AsyncStorage from '@react-native-community/async-storage';
+import { TokenContext } from '../components/TokenContext';
 
 const scopes = [
   'user-library-read',
@@ -22,6 +23,8 @@ const scopes = [
 ];
 
 export const SpotifyLoginScreen: React.FC<NavigationScreenProps> = props => {
+  const [, setToken] = React.useContext(TokenContext);
+
   const openSpotifyLogin = () => {
     const queryParams = {
       client_id: '3a672567e35644c6b913dfdeea6494bd',
@@ -70,12 +73,13 @@ export const SpotifyLoginScreen: React.FC<NavigationScreenProps> = props => {
             expiresIn &&
             compareAsc(new Date(expiresIn), new Date())
           ) {
+            setToken(accessToken);
             props.navigation.navigate('App');
           }
         }
       })
       .catch(console.error);
-  }, [props.navigation]);
+  }, [props.navigation, setToken]);
 
   return (
     <View style={styles.center}>
