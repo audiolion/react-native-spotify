@@ -51,7 +51,7 @@
     "jest-fetch-mock": "^2.1.2",
     "jest-junit": "^8.0.0",
     "metro-react-native-babel-preset": "^0.54.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "react-native-testing-library": "^1.11.1",
     "react-test-renderer": "16.8.6",
     "reactotron-react-native": "^3.6.5",
